@@ -39,6 +39,14 @@ For each software package or tool, that you install make sure you install their 
 
 So, clearly, we are using the arm64 for this installation of ruby
 
+If you do not have the native ARM version of Ruby 2.7.4, you may see something like:
+
+`ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-darwin20]` (Notice the "x86_64")
+
+Then, you may uninstall that Ruby version using `rbenv uninstall 2.7.4` and install ruby again using `rbenvv install 2.7.4` (Just keep tip 1 in mind when you do so).
+
+Make sure to make that Ruby version global by using `rbenv global`. You may then open a new terminal window and check your ruby version using `ruby -v`.
+
 ## Tip 3 - Install libpq
 
 From the libpq doc: "libpq is the C application programmer's interface to PostgreSQL. libpq is a set of library functions that allow client programs to pass queries to the PostgreSQL backend server and to receive the results of these queries".
@@ -66,6 +74,15 @@ Version 14 at the time of writing is not officially compatible with MacOS 11.
 Start the server
 
 `brew services start postgresql`
+
+Sometimes, the command `brew services start postgresql` may throw an error. You may then try to restart the server with `brew services start postgresql`.
+You can also restart the server by `brew services stop postgresql` followed by `brew services start postgresql`. 
+
+Finally, you may check if everything is ok using `psql -d postgres`. If all is well, you would see something like:
+`psql (14.0, server 13.4)
+Type "help" for help.
+
+postgres=# `
 
 ### If the server is not starting
 
