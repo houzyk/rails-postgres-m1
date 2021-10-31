@@ -75,7 +75,7 @@ Start the server
 
 `brew services start postgresql`
 
-Sometimes, the command `brew services start postgresql` may throw an error. You may then try to restart the server with `brew services start postgresql`.
+Sometimes, the command `brew services start postgresql` may throw an error. You may then try to restart the server with `brew services restart postgresql`.
 You can also restart the server by `brew services stop postgresql` followed by `brew services start postgresql`. 
 
 Finally, you may check if everything is ok using `psql -d postgres`. If all is well, you would see something like:
